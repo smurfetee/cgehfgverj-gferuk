@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Пример использования CSS правила @keyframes</title>
+<style> 
+.test {
+width: 300px; /* устанавливаем ширину блока */
+height: 100px;  /* устанавливаем высоту блока */
+border-radius: 50px;  /* определяем форму углов элемента */
+position: relative;  /* элемент с относительным позиционированием (position:static - по умолчанию и, как следствие, значение свойства left не повлияли бы на позиционирование элемента) */
+-webkit-animation: iliketomoveit 5s infinite;  /*  для поддержки ранних версий браузеров */
+animation: iliketomoveit 5s infinite;  /* задаём имя анимации (соответствует имени назначенному в ключевых кадрах), продолжительность анимации и указываем, что анимация будет повторяться бесконечно  */
+} 
+@-webkit-keyframes iliketomoveit { /* для поддержки ранних версий браузеров */ 
+        0%   {left: 0px;} /* задаем начало анимации */ 
+        25%  {left: 400px; background: red;} /* сдвигаем элемент на 400px от левого края при этом устанавливаем цвет заднего фона */ 
+        75%  {left: 200px;}  /* уменьшаем сдвиг от левого края */ 
+        100% {left: 0px; background: green;} /* возвращаем элемент на первоначальную точку и изменяем цвет заднего фона */ 
+        } 
+@keyframes iliketomoveit {
+        0%   {left: 0px;} 
+        25%  {left: 10px; background: red;} 
+        75%  {left: 20px;} 
+        100% {left: 0px; background: green;} 
+        } 
+</style>
+</head>
+<body>
+<div class = "test"></div>
+</body>
+</html>
